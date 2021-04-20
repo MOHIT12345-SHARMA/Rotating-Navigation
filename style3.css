@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: darkgray;
+    overflow-x: hidden;
+  
+}
+.container{
+    background-color:white;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+.container.show-nav{
+    transform: rotate(-20deg);
+}
+.circle-container{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+.circle{
+    background-color: springgreen;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: translate 0.1s linear;
+}
+.container.show-nav .circle{
+    transform: rotate(-55deg);
+}
+.circle button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    font-size: xx-large;
+    border: 0px;
+    color: rgb(102, 4, 102);
+}
+.circle button:focus{
+    outline: none;
+}
+.circle button#close{
+    top:55%;
+    transform-origin: top left;
+    transform: rotate(50deg);
+}
+.container.show-nav + nav li{
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+nav{
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
+    z-index: 100
+}
+nav ul{
+    list-style-type: none;
+    padding-left: 30px;
+    
+}
+nav ul li{
+    color: #ffffff;
+    margin: 20px 0;
+    text-transform: uppercase;
+    transition: transform 0.5s ease-in;
+}
+nav ul li + li{
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+nav ul li + li + li{
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+.circle button#open{
+    left: 60%;
+}
+.content img{
+    max-width: 100%;
+}
+.content{
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.content h1{
+    margin: 0px;
+}
+.content small{
+    color: rgb(70, 63, 63);
+    font-style: italic;
+}
+.content p{
+    line-height: 1.5rem;
+}
